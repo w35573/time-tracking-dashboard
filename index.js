@@ -12,19 +12,21 @@ window.addEventListener('load', () => {
     weekly.classList.add('active');
 });
 
-dots.forEach( dot => {
+dots.forEach(dot => {
     dot.addEventListener('click', () => {
-        // if(dot.parentElement.parentElement.classList.contains('retain'))
-        //     dot.parentElement.parentElement.classList.remove('retain');
+        dot.parentElement.parentElement.classList.remove('retain');
         dot.parentElement.parentElement.classList.add('change');
+        console.log(dot.parentElement.parentElement.classList);
     });
 });
 
 lowerCards.forEach(lowerCard => {
     lowerCard.addEventListener('click', () => {
-        // if (lowerCard.classList.contains('change'))
-        //     lowerCard.classList.remove('change');
+        if (lowerCard.classList.contains('change') && lowerCard.classList.contains('retain'))
+            lowerCard.classList.remove('change');
+
         lowerCard.classList.add('retain');
+        console.log(lowerCard.classList);
     });
 });
 
